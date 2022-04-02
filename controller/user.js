@@ -27,11 +27,11 @@ const store = async(req,res) => {
 const find = async(req,res) => {
 
     try {
-        const { id } = req.params;
+        const { email } = req.params;
 
-        console.log("id is: "+id);
+        console.log("id is: "+email);
 
-        const [user] = await listarPorId(id);
+        const [user] = await listarPorId(email);
 
         if(!user)
             return res.sendStatus(404).send({erro:"User não encontrado"});

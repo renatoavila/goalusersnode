@@ -54,11 +54,13 @@ const listarTodos = () => {
     })
 };
 
-const listarPorId = (id) => {
-    const sql = "select * from goaluser where id = ?";
+const listarPorId = (email) => {
+    const sql = "select * from goaluser where email=?";
+
+    console.log("email is: "+email);
 
     return new Promise((resolve, reject) => {
-        const query = conexao.format(sql, id);
+        const query = conexao.format(sql, email);
 
         conexao.query(query, (erro, retorno) => {
             if(erro) return reject(erro);

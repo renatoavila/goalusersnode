@@ -30,7 +30,7 @@ app.post("/users", adicionar);
 
 // Read
 app.get("/users", listarTodos);
-app.get("/users/:id", listarPorId);
+app.get("/users/:email", listarPorId);
 
 // Update
 app.put("/users/:id", atualizar);
